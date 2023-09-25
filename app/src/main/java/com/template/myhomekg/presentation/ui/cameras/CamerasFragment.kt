@@ -12,8 +12,7 @@ class CamerasFragment : Fragment() {
     private val adapter = CamerasAdapter()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         binding = FragmentCameraBinding.inflate(layoutInflater)
         return binding.root
@@ -21,10 +20,10 @@ class CamerasFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initViews()
+        initializeView()
     }
 
-    private fun initViews() {
+    private fun initializeView() {
         binding.recyclerView.adapter = adapter
     }
 }

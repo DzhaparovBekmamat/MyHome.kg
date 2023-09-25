@@ -5,5 +5,9 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "doors")
 data class Door(
-    @PrimaryKey val id: Int, val name: String?, val image: String?
+    @PrimaryKey
+    val id: Int,
+    val name: String = "Door",
+    val image: String ?= null,
+    var isFavourite : Boolean = false
 )

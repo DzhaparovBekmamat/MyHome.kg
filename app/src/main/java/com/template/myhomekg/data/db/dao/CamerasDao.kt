@@ -13,11 +13,11 @@ interface CamerasDao {
     suspend fun getAllCameras(): List<Camera>
 
     @Insert
-    suspend fun insertCamera(camera: Camera): Unit
+    suspend fun insertCamera(camera: Camera)
 
     @Update
-    suspend fun updateCamera(camera: Camera): Unit
+    suspend fun updateCamera(camera: Camera)
 
     @Delete
-    suspend fun deleteCamera(camera: Camera): Unit
+    suspend fun deleteCamera(camera: Camera)
 }

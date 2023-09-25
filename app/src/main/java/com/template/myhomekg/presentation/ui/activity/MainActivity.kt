@@ -13,10 +13,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        initViews()
+        initializeView()
     }
 
-    private fun initViews() {
+    private fun initializeView() {
         val tabLayout = binding.tabLayout
         val viewPager = binding.viewPager
         val toolbar = binding.toolbar
