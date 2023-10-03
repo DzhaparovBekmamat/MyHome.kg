@@ -8,16 +8,16 @@ import androidx.room.Update
 import com.template.myhomekg.data.model.Camera
 
 @Dao
-interface CamerasDao {
-    @Query("SELECT * FROM cameras")
+interface CameraDao {
+    @Query("SELECT * FROM camera")
     suspend fun getAllCameras(): List<Camera>
 
     @Insert
-    suspend fun insertCamera(camera: Camera)
+    suspend fun insertCamera(camera: Camera): Unit
 
     @Update
-    suspend fun updateCamera(camera: Camera)
+    suspend fun updateCamera(camera: Camera): Unit
 
     @Delete
-    suspend fun deleteCamera(camera: Camera)
+    suspend fun deleteCamera(camera: Camera): Unit
 }

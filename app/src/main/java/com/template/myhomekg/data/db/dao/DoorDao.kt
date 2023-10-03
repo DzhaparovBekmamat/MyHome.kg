@@ -8,8 +8,8 @@ import androidx.room.Update
 import com.template.myhomekg.data.model.Door
 
 @Dao
-interface DoorsDao {
-    @Query("SELECT * FROM doors")
+interface DoorDao {
+    @Query("SELECT * FROM door")
     suspend fun getAllDoors(): List<Door>
 
     @Insert
