@@ -7,9 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.template.myhomekg.databinding.FragmentCameraBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class CameraFragment : Fragment() {
@@ -34,9 +36,11 @@ class CameraFragment : Fragment() {
     }
 
     private fun addElements() {
-        cameraViewModel.getCameras().observe(requireActivity()) { cameras ->
-            if (cameras != null) {
-                adapter.setList(cameras)
+        lifecycleScope.launch {
+            cameraViewModel.cameraList.observe(requireActivity()) { response ->
+                if (response != null) {
+                    adapter.setList(response)
+                }
             }
         }
     }

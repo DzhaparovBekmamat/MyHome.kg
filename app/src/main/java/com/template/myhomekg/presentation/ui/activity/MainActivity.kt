@@ -2,9 +2,9 @@ package com.template.myhomekg.presentation.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.template.myhomekg.presentation.ui.ViewPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import com.template.myhomekg.databinding.ActivityMainBinding
-import com.template.myhomekg.presentation.ui.ViewPagerAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -17,6 +17,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initViews()
+        val arrayNumbers = listOf(1, 2, 3, 4, 5, 6)
+        arrayNumbers.filter { it % 2 == 0 }
+        val a = 0.0f
+        arrayNumbers.map {
+            9
+        }
     }
 
     private fun initViews() {

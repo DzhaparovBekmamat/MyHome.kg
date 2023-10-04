@@ -1,12 +1,10 @@
 package com.template.myhomekg.domain.models
 
-import com.template.myhomekg.data.model.Camera
-
 data class CameraList(
-    var data: Data
+    var data: CameraData
 )
 
-data class Data(
-    var cameras: List<Camera>
+data class CameraData(
+    var cameras: List<CameraModel>
 )
 

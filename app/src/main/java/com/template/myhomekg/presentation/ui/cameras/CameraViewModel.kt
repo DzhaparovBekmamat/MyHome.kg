@@ -8,24 +8,25 @@ import com.template.myhomekg.data.repository.CameraRepositoryImpl
 import com.template.myhomekg.domain.models.CameraModel
 import com.template.myhomekg.domain.usecases.GetAllCamerasUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class CameraViewModel @Inject constructor(private val repositoryImpl: CameraRepositoryImpl) :
+class CameraViewModel @Inject constructor(repositoryImpl: CameraRepositoryImpl) :
     ViewModel() {
     private val camerasUseCase = GetAllCamerasUseCase(repositoryImpl)
     val cameraList = MutableLiveData<List<CameraModel>>()
-    fun getCameras(): MutableLiveData<List<CameraModel>> {
+
+    init {
+        getCameras()
+    }
+
+    private fun getCameras() {
         viewModelScope.launch {
-            camerasUseCase.getResult().catch { e ->
-                Log.e("ololo", "getCameras: ${e.message}")
-            }.collect { response ->
-                cameraList.value = response
+            camerasUseCase.getResult().collect { response ->
+                cameraList.postValue(response)
                 Log.d("ololo", "getCameras: $response")
             }
         }
-        return cameraList
     }
 }

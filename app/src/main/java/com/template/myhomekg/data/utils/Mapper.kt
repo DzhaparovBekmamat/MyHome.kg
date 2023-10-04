@@ -1,9 +1,9 @@
 package com.template.myhomekg.data.utils
 
-import com.template.myhomekg.data.model.Camera
-import com.template.myhomekg.data.model.Door
 import com.template.myhomekg.domain.models.CameraModel
 import com.template.myhomekg.domain.models.DoorModel
+import com.template.myhomekg.data.model.Camera
+import com.template.myhomekg.data.model.Door
 
 fun List<Camera>.mapToCameraModel() = this.map { camera ->
     CameraModel(

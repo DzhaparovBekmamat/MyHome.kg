@@ -13,11 +13,11 @@ interface DoorDao {
     suspend fun getAllDoors(): List<Door>
 
     @Insert
-    suspend fun insertDoor(door: Door): Unit
+    suspend fun insertDoor(door: Door)
 
     @Update
-    suspend fun updateDoor(door: Door): Unit
+    suspend fun updateDoor(door: Door)
 
     @Delete
-    suspend fun deleteDoor(door: Door): Unit
+    suspend fun deleteDoor(door: Door)
 }

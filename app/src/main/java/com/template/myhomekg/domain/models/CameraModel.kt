@@ -1,8 +1,11 @@
 package com.template.myhomekg.domain.models
 
+import androidx.room.PrimaryKey
+import com.google.gson.annotations.SerializedName
+
 data class CameraModel(
-    val id: Int,
+    @PrimaryKey val id: Int,
     val name: String = "Camera",
-    val image: String? = null,
+    @SerializedName("snapshot") val image: String? = null,
     var isFavourite: Boolean = false
 )
